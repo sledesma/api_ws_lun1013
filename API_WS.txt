@@ -1,0 +1,15 @@
+¿QUE SE PUEDE ESPERAR DEL CURSO Y QUE NO?
+
+Sistemas Distribuidos = Sistemas Divididos, Fragmentados
+
+Implementaciones
+    * API REST ("apis") => JSON
+    * SOAP ("web service") => XML
+
+
+** Lenguaje de intercambio
+    * JavaScript Object Notation (2)
+    * eXtensible Markup Language (1)
+
+** Protocolo
+    * HTTP
