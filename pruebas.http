@@ -1,5 +1,6 @@
-POST http://localhost/api_ws_lun1013/
+POST http://localhost/api_ws_lun1013/productos/
 Authorization: 1234
+Content-Type: application/json
 
 {
     "nombre": "Andrea"

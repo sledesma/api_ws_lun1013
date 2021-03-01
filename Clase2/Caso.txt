@@ -1,0 +1,33 @@
+Una empresa de comercio electrónico necesita desarrollar una API para
+una tienda online. La API permitirá obtener diferentes reportes
+de los productos. Cada producto debe tener los siguientes datos:
+Nombre, Descripción, Precio, Stock, Valoración.
+Los reportes que se deben generar son:
+    * Listar todos los productos
+    * Listar productos filtrados por nombre y descripción.
+    * Listar un solo producto
+    * Listar los 5 productos con mayor Valoración
+    * Listar los 5 productos de menor Precio
+
+Principio de Responsabilidad Única
+
+REQUISITOS FUNCIONALES
+    * Filtrado de los productos
+    * Filtrado por Precio
+    * Todos los productos
+    * Obtener un solo producto
+    * Listar los 5 productos con mayor Valoración
+    * Listar los 5 productos de menor Precio
+
+REQUISITOS NO FUNCIONALES
+    * Acceder a la base de datos
+    * Hosting
+    * Mantenible
+
+
+NO HTML => CSS
+NO CSS => JS
+NO JS => BACK-END (PHP / Python / C# / Java / Node / ....)
+NO BACK-END => BBDD
+
+* Una API es un proyecto de PURO Back-End y BBDD

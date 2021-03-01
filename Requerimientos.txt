@@ -1,0 +1,23 @@
+Requerimientos FUNCIONALES
+    > Harina
+    > Cebolla
+    > Jamón y Queso
+
+    > Generar una Factura cuando termine la compra
+
+    > Listar productos
+
+    > Listar productos por fecha
+
+
+Requerimientos NO FUNCIONALES
+    > Mesada
+    > Manta / Trapo
+    > Horno
+        > Gas / Electricidad
+
+    > Seguridad
+        > Encabezados HTTP
+        > Encriptación / Hash
+
+    > Acceso a base de datos
