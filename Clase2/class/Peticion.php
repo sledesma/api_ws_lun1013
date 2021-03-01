@@ -7,6 +7,8 @@ class Peticion {
     private $cuerpo;
     private $cabeceras;
 
+    // $obj->hola(); es mas rapido call_user_func([$obj, 'hola'])
+
     public function __construct($config = []) {
         $this->url = $config['url'];
         $this->metodo = $config['metodo'];
