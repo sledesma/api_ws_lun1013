@@ -9,6 +9,7 @@ class Respuesta {
 
     public function status($code) {
         http_response_code($code);
+        return $this;
     }
 
 }

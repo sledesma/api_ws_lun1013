@@ -2,6 +2,7 @@
 
 require_once 'class/Peticion.php';
 require_once 'class/Respuesta.php';
+require_once 'class/Router.php';
 
 $peticionActual = new Peticion([
     'url' => $_GET['url'],
@@ -10,37 +11,53 @@ $peticionActual = new Peticion([
     'cabeceras' => apache_request_headers()
 ]);
 
-$respuesta = new Respuesta();
+$router = new Router(); 
 
-// REQUERIMIENTOS FUNCIONALES
-$equivalenciasPeticionRespuesta = 
-[
-    [
-        'peticion' => [
-            'url' => 'productos',
-            'metodo' => 'GET'
-        ],
-        'respuesta' => [
-            'codigoEstado' => 200,
-            'datos' => [
-                'mensaje' => 'Hola mundo desde productos'
-            ]
-        ]
-    ]
-];
+$router->get('#productos[/\d]*#', function($peticion, $respuesta){
+    // ['productos', '1']
+    $urlParts = explode('/', $peticion->url());
+    $id = $urlParts[1];
 
-function procesarPeticion($peticion) {
-    foreach($equivalenciasPeticionRespuesta as $equivalencia) {
-        if($equivalencia['peticion']['url'] == $peticion->url() 
-            && $equivalencia['peticion']['metodo'] == $peticion->metodo()) {
-                $respuesta->status($equivalencia['respuesta']['codigoEstado']);
-                $respuesta->json($equivalencia['respuesta']['datos']);
-            }
+    try {
+        
+        $pdo = new PDO('mysql:host=localhost;dbname=caso_api2', 'root', '');
+
+        $data = $pdo
+                    ->query('SELECT * FROM productos WHERE Id = '.$id)
+                    ->fetch(PDO::FETCH_ASSOC);
+
+        $respuesta->status(200)->json($data);
+
+    } catch(Exception $ex) {
+
+        $respuesta->status(500)->json([
+            'msj' => 'Error al conectarse con la base de datos'
+        ]);
+
     }
-}
-
-procesarPeticion($peticionActual);
+});
 
 
-// Una API es un conjunto de equivalencias Petición / Respuesta
+// Listar todos los productos
+$router->get('#productos#', function($peticion, $respuesta){
 
+    // PUEDE VENIR CUALQUIER CODIGO
+    try {
+        
+        $pdo = new PDO('mysql:host=localhost;dbname=caso_api2', 'root', '');
+
+        $data = $pdo->query('SELECT * FROM productos')->fetchAll(PDO::FETCH_ASSOC);
+
+        $respuesta->status(200)->json($data);
+
+    } catch(Exception $ex) {
+
+        $respuesta->status(500)->json([
+            'msj' => 'Error al conectarse con la base de datos'
+        ]);
+
+    }
+});
+
+
+$router->procesarPeticion($peticionActual);

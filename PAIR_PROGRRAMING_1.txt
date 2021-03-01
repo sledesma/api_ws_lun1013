@@ -1,0 +1,47 @@
+Paula
+Hernan
+Maximiliano
+
+
+Armar la planificación para una API REST de un Blog.
+
+Un estudio de diseño gráfico necesita realizar una API para sus proyectos en 
+Wordpress. La idea de la empresa es centralizar toda la información en un solo
+lado, y así poder abaratar costos de los distintos hostings de sus clientes.
+
+La API contendrá toda la información de TODOS los clientes de la agencia.
+De cada cliente se necesita saber pocas cosas, como son su número de cliente y
+una descripción corta; ya que con dicho número la empresa buscará su
+información en otro sitio.
+
+De cada cliente, se debe contar principalmente con estos dos recursos:
+los posts y las categorías. Cada post debe tener un identificador,
+el título y el cuerpo. Cada categoría debe tener un identificador y un nombre.
+Un post puede tener varias categorías y una categoría puede tener varios
+posts.
+
+La agencia de diseño gráfico necesita poder:
+    * Obtener todos los post de un cliente
+    * Obtener todos los posts de un cliente y de una categoría
+    * Obtener todas las categorías de un cliente (para armar el menu de navegación)
+    * Obtener un solo post
+
+EXTRA:
+    Agregar una tabla llamada usuarios, en donde se encuentren distintas
+    claves de acceso. Esas claves deberan ser suministradas por la cabecera
+    Authorization a cada petición de la API. Si no se suministra Authorization
+    o su valor no se encuentra dentro de la tabla usuarios, debe arrojar
+    error 403 (Fordibben / Extraño)
+
+
+Cosas que debería tener:
+
+Una lista de las URLS, con los respectivos reportes
+GET /cliente/(id)/posts => Listado de todos los posts del cliente
+
+Lista de Requerimientos Funcionales / NO Funcionales
+
+Diagrama de Casos de Uso
+
+Diagrama de Clases (EXTRA)
+
