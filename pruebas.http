@@ -1,4 +1,4 @@
-POST http://localhost/api_ws_lun1013/productos/
+GET http://localhost/api_ws_lun1013/Clase2/
 Authorization: 1234
 Content-Type: application/json
 

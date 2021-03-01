@@ -12,7 +12,35 @@ $peticionActual = new Peticion([
 
 $respuesta = new Respuesta();
 
-$respuesta->status(400);
-$respuesta->json([
-    'mensaje' => 'Filtro erroneo flaco'
-]);
+// REQUERIMIENTOS FUNCIONALES
+$equivalenciasPeticionRespuesta = 
+[
+    [
+        'peticion' => [
+            'url' => 'productos',
+            'metodo' => 'GET'
+        ],
+        'respuesta' => [
+            'codigoEstado' => 200,
+            'datos' => [
+                'mensaje' => 'Hola mundo desde productos'
+            ]
+        ]
+    ]
+];
+
+function procesarPeticion($peticion) {
+    foreach($equivalenciasPeticionRespuesta as $equivalencia) {
+        if($equivalencia['peticion']['url'] == $peticion->url() 
+            && $equivalencia['peticion']['metodo'] == $peticion->metodo()) {
+                $respuesta->status($equivalencia['respuesta']['codigoEstado']);
+                $respuesta->json($equivalencia['respuesta']['datos']);
+            }
+    }
+}
+
+procesarPeticion($peticionActual);
+
+
+// Una API es un conjunto de equivalencias Petición / Respuesta
+
