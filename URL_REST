@@ -1,0 +1,27 @@
+GET     /recurso         Traer todos
+
+GET     /recurso/:id     Traer uno
+
+POST    /recurso         Crear nuevo
+
+PUT     /recurso/:id     Editar uno
+
+DELETE  /recurso/:id     Borrar uno
+
+
+Traer todos los post de un usuario
+GET /usuario/1/post
+
+Traer una determinada CATEGORIA de un USUARIO
+GET /usuario/12/categoria/23
+
+Crear un nuevo post para el usuario 23
+POST /usuario/23/post
+
+Borrar todos los POST de la CATEGORIA 23 del USUARIO 50
+DELETE
+        /post/ (todos los posts)
+        /categoria/23 ( de la categoria 23)
+        /usuario/50 (del usuario 50)
+     
+DELETE /usuario/50/categoria/23/post

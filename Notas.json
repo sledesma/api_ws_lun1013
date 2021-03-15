@@ -1,0 +1,7 @@
+[
+    { "nombre": "Salud", "url": "http://api.agencia.com/categoria/12" },
+    { "nombre": "Belleza", "url": "http://api.agencia.com/categoria/13" },
+    { "nombre": "Trabajo", "url": "http://api.agencia.com/categoria/14" }
+]
+
+
