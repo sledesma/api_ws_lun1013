@@ -1,0 +1,17 @@
+Descripción: Realizar una API que permita obtener diferentes estadísticas de
+un volumen de datos. Debe ser una API stateless (sin estado, sin almacenar datos)
+
+
+Casos de uso:
+
+Actor: Usuario normal
+Casos de uso:
+    * Obtener el producto con mayor valor
+    * Obtener el producto con menor valor
+
+
+Lista de Rutas:
+
+POST    /maximo    (Recibe cuerpo JSON)   Obtener el producto con mayor valor
+POST    /minimo    (Recibe cuerpo JSON)   Obtener el producto con menor valor
+

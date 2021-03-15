@@ -1,0 +1,17 @@
+CICLO DE VIDA DE UNA PETICION HTTP
+
+1. La petición entra por el index.php
+
+2. Se incluye el header
+
+3. Se incluyen las funciones utilitarias
+
+4. Se carga la conexión con la base de datos
+
+5. Se incluyen las funciones de la conexión con la API
+
+6. Se elige la página a cargar en base a $_GET['page']
+
+7. Se incluye el archivo con nombre igual a $_GET['page']
+
+8. Se incluye el pie de página
